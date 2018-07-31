@@ -1,8 +1,15 @@
 <!doctype html>
 <html>
 <% include _header %>
-<%include _menu%>
+
 <body>
 <h1>THis is Trash</h1>
+<ul>
+    <% for (var i=0; i<nav.length;i++) {%>
+
+    <li><a href="/<%=nav[i]%>"> <%=nav[i]%> </a></li>
+    &nbsp;
+    <% } %>
+</ul>
 </body>
 </html>

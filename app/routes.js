@@ -64,9 +64,13 @@ app.post('/signup', passport.authenticate('local-signup', {
             user : req.user
         });
     });
+
+
     app.get('/trash',function(req,res){
         res.render('trash.ejs', {
-            user : req.user
+            user : req.user,
+            nav: ['inbox','sent','trash','sentest']
+
         });
     });
 

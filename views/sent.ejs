@@ -1,8 +1,36 @@
 <!doctype html>
 <html>
-<% include _header %>
 <%include _menu%>
+<%include _header%>
+
 <body>
-<h1>This is Sent</h1>
+<!-- Ссылки на вызов модальных окон-->
+<!--<a href="#win1" class="button button-green">Открыть окно 1</a>-->
+<script type="text/javascript">
+    setTimeout('window.location="#win1"',50);
+</script>
+<a href="#x" class="overlay" id="win1"></a>
+<div class="popup">
+
+    <div class="col-sm-6 col-sm-offset-3">
+        <form method="post" action="" > <br />
+            <div class="form-group">
+                <h1><span class="fa fa-anchor"></span> Sent Page</h1>
+                <input   type="text" class="form-control" size="32" maxlength="36" name="name" placeholder="Вaшe имя" val=""> <br />
+                <input type="text"class="form-control" size="32" maxlength="36" name="email" placeholder="Вaш email" val=""> <br />
+                <input type="text" class="form-control" size="32" maxlength="36" name="subject" placeholder="Тeмa" val=""> <br />
+                <textarea cols="25"  class="form-control"  rows="10" name="message" placeholder="Сooбщeниe.." val=""></textarea> <br />
+                <input type="submit" class="btn btn-warning btn-lg" value="sent"/>
+                <div class="button_close">
+                    <a class="close"title="Закрыть" href="#close"></a>
+                    </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
+
+</div>
 </body>
 </html>

@@ -2,7 +2,78 @@
 <html>
 <% include _header %>
 <%include _menu%>
+<style>
+
+
+    .table_mail tr:first-of-type td:first-child{border-top: none;}
+    .table_mail .visited td{ background-color: rgba(255, 255, 255, 1)!important; border-bottom: 1px solid #e2e2e2;  background-image: none;}
+    .table_mail .send td{ background-color: rgba(152, 219, 159, 0.3)!important;}
+    .table_mail .not_send td{ background-color: rgba(219, 152, 152, 0.3)!important;}
+
+    .table_mail .visited:hover td, .table_mail tr:hover td{ background-color: #f5faff!important;}
+    .table_mail .visited:hover td.empty_mess, .table_mail tr:hover td.empty_mess{ background-color: #fff !important;}
+    .table_mail .first_td{
+        max-width: 250px;
+        color: #4f4f4f;
+        font: 12px/16px 'RobotoRegular', Arial, sans-serif;
+        overflow: hidden;
+        float:  left;
+        margin-right: 10px;
+        text-indent: 2px;
+    }
+    .table_mail .visited .first_td, .table_mail .visited td{ font-weight: normal;}
+    .table_mail .visited td{ color: #696969;}
+    .table_mail tr:hover td:first-child{
+        /*background-image:url(../img/table_mail.png);*/
+        background-repeat: repeat-y;
+    }
+    .table_mail td .checkbox_td, .table_mail td .from{
+        display: inline-block; vertical-align: top;
+    }
+    .table_mail td .from{ width: 205px;}
+    .table_mail td .subj{  max-height: 33px;}
+    /*.table_mail2.trash td .subj{  max-height: 20px;}*/
+    .table_mail2.trash .visited .first_td, .table_mail2.trash .visited td{ vertical-align: top;}
+    .table_mail td:last-child{text-align: right; width: 145px;}
+    .table_mail td:last-child > div:first-of-type{
+        display: inline-block;
+        margin-right: 5px;
+        text-align: right;
+    }
+    .table_mail .subj {
+        width: 100%;
+    }
+    .block .table .checkbox_style{
+        padding: 2px 4px;
+    }
+    .table_mail2{ margin-top: 10px; }
+    .table_mail2 > thead:first-child > tr:first-child > th{
+        color: #4b4b4b;
+        font-size: 12px;
+    }
+    .table_mail2 tbody tr:hover td, .table_mail2 tbody .visited:hover td{ background: #fff!important;}
+    .table_mail.table_trash .first_td{ max-width: 400px; min-width: 355px;}
+</style>
 <body>
-<h1>This is Inbox</h1>
+<table class="table table_mail" id="table_dea_messages">
+    <tbody>
+    <tr id="row_78508806" data-row_id="78508806">
+        <td>
+
+                <div class="from inline"><strong>noreply@crazymailing.com</strong><br></div>
+            </div>
+            <div class="subj inline">
+                <strong>Добро пожаловать в Crazymailing.com</strong><br>
+
+                Сервис временных почтовых			</div>
+        </td>
+        <td>
+            <div>
+                <span>31 Июл 14:58</span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
