@@ -41,9 +41,11 @@ app.post('/signup', passport.authenticate('local-signup', {
 	}));
 
 	app.get('/profile', isLoggedIn, function(req, res) {
-	    var act="active";
+	    var activ = "active";
+        var ver,ac,act;
+        ver=ac=act="";
 		res.render('profile.ejs', {
-		    			user : req.user,act:act		});
+		    			user : req.user,ac: ac,activ:activ,ver:ver,act:act	});
 	});
 
 	app.get('/logout', function(req, res) {
@@ -52,33 +54,45 @@ app.post('/signup', passport.authenticate('local-signup', {
 	});
 
     app.get('/inbox',function(req,res){
-        var act="active";
+        var ver = "active";
+        var activ,ac,act;
+        activ=ac=act="";
         res.render('inbox.ejs', {
-            user : req.user,act:act
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act
         });
     });
 
 
 
     app.get('/sent',function(req,res){
-        var act="active";
+        var ac = "active";
+        var activ,ver,act;
+        activ=ver=act="";
         res.render('sent.ejs', {
 
-            user : req.user,act:act
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act
         });
     });
 
 
     app.get('/trash',function(req,res){
-        var act="active";
+        var act = "active";
+        var activ,ver,ac;
+        activ=ver=ac="";
         res.render('trash.ejs', {
 
-            user : req.user,act:act,
-        nav: ['inbox','sent','trash','sentest']
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act
 
         });
     });
-
+    app.get('/message',function(req,res){
+        var ver = "active";
+        var activ,ac,act;
+        activ=ac=act="";
+        res.render('message_form.ejs', {
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act
+        });
+    });
 };
 
 

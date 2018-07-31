@@ -4,22 +4,38 @@
 <%include _menu%>
 
 <body>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Time/Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr onclick="document.location = '/message';">
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-3">
-            Одна из трёх колонок
-        </div>
-        <div class="col-sm-3">
-            Одна из трёх колонок
-        </div>
-        <div class="col-sm-3">
-            Одна из трёх колонок
-        </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <th scope="row">1</th>
+        <td>Mark@gmail.com</td>
+        <td >Ololoolo</td>
+        <td>12:17/21.01.17</td>
+    </tr>
+    <tr onclick="document.location = '/message';">
+        <th scope="row">2</th>
+        <td>Jacob@rambler.ru</td>
+        <td>Hello woorld!</td>
+        <td>19.00/21.01.18</td>
+    </tr>
+    <tr onclick="document.location = '/message';">
+        <th scope="row">3</th>
+        <td>Harry@mail.ru</td>
+        <td >Larry the Bird</td>
+        <!--<td colspan="2"></td>-->
+        <td>23:17/28.07.18</td>
+    </tr>
+    </tbody>
+</table>
+<%include _js_bootstap%>
 </body>
 </html>
