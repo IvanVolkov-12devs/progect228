@@ -6,13 +6,26 @@
             <a href="/logout" class="btn btn-default btn-sm">Logout</a>
         </div>
     </div>
-    <nav class="text-left">
-        <h1>Navigation</h1>
-        <ul>
-            <li><a href="/inbox">Inbox</a></li>
-            <li><a  href="/sent">Sent</a></li>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="<%= act%>"><a href="/profile">Home</a></li>
+                    <li class="<%= act%>" > <a href="/inbox">Inbox</a></li>
+                    <li class="<%= act%>"><a href="/trash">Trash</a></li>
+                    <li class="<%= act%>"><a href="/sent">Sent</a></li>
 
-            <li><a href="/trash">Trash</a></li>
-        </ul>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
     </nav>
 </header>

@@ -41,9 +41,9 @@ app.post('/signup', passport.authenticate('local-signup', {
 	}));
 
 	app.get('/profile', isLoggedIn, function(req, res) {
+	    var act="active";
 		res.render('profile.ejs', {
-			user : req.user
-		});
+		    			user : req.user,act:act		});
 	});
 
 	app.get('/logout', function(req, res) {
@@ -52,24 +52,29 @@ app.post('/signup', passport.authenticate('local-signup', {
 	});
 
     app.get('/inbox',function(req,res){
+        var act="active";
         res.render('inbox.ejs', {
-            user : req.user
+            user : req.user,act:act
         });
     });
 
 
 
     app.get('/sent',function(req,res){
+        var act="active";
         res.render('sent.ejs', {
-            user : req.user
+
+            user : req.user,act:act
         });
     });
 
 
     app.get('/trash',function(req,res){
+        var act="active";
         res.render('trash.ejs', {
-            user : req.user,
-            nav: ['inbox','sent','trash','sentest']
+
+            user : req.user,act:act,
+        nav: ['inbox','sent','trash','sentest']
 
         });
     });
