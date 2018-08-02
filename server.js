@@ -55,14 +55,7 @@ const User = UserModel(sequelize, Sequelize);
 sequelize.sync({ force: true })
     .then(() => {
         console.log(`Database & tables created!`)
-    })
-module.exports = {
-    User
-}
-
-
-
-
+    });
 // ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 

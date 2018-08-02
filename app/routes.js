@@ -93,6 +93,10 @@ app.post('/signup', passport.authenticate('local-signup', {
             user : req.user,ac: ac,activ:activ,ver:ver,act:act
         });
     });
+    const  User = require('../server.js');
+    app.get('users', (req, res) => {
+        User.findAll().then(users => res.json(users))
+    })
 };
 
 
@@ -101,18 +105,5 @@ function isLoggedIn(req, res, next) {
 	return next();
 	res.redirect('/');
 }
-module.exports = (sequelize, type)=>{
-    return sequelize.define('users',{
 
-        id:{
-            type:type.INTEGER,
-            primaryKey:true,
-            autoIncrement:true
-        },
-        username:type.VARCHAR,
-    })
-};
-const  User = require('server.js');
-app.get('users', (req, res) => {
-    User.findAll().then(users => res.json(users))
-})
+
