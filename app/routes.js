@@ -113,6 +113,6 @@ module.exports = (sequelize, type)=>{
     })
 };
 const  User = require('server.js');
-app.get('/api/users', (req, res) => {
+app.get('users', (req, res) => {
     User.findAll().then(users => res.json(users))
 })
