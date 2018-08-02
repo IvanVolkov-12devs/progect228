@@ -40,6 +40,29 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 // routes
+const Sequelize = require('sequelize');
+const UserModel = require('./config/users')
+const sequelize = new Sequelize('new', 'kmail', 'kmail228', {
+    host: 'localhost',
+    dialect: 'mysql',
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    },
+});
+const User = UserModel(sequelize, Sequelize);
+sequelize.sync({ force: true })
+    .then(() => {
+        console.log(`Database & tables created!`)
+    })
+module.exports = {
+    User
+}
+
+
+
+
 // ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
