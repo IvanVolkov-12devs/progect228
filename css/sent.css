@@ -1,6 +1,6 @@
 /* Базовые стили слоя затемнения и модального окна  */
 
-.overlay {
+overlay {
     top: 0;
     right: 0;
     bottom: 0;
@@ -27,7 +27,6 @@
     width: 85%;
     min-width: 320px;
     max-width: 600px;
-    /* фиксированное позиционирование, окно стабильно при прокрутке */
     position: fixed;
     padding: 15px;
     border: 1px solid #383838;
@@ -60,10 +59,9 @@
     transform: translate(-50%, 0);
     top: 20%;
 }
-/* формируем кнопку закрытия */
 .close {
     top: -10px;
-    right: -10px;
+    right: 10px;
     width: 20px;
     height: 20px;
     position: absolute;
@@ -107,43 +105,76 @@
     width: 100%;
     height: auto;
 }
-/* миниатюры слева/справа */
-.pic-left,
-.pic-right {
-    width: 25%;
-    height: auto;
-}
-.pic-left {
-    float: left;
-    margin: 5px 15px 5px 0;
-}
-.pic-right {
-    float: right;
-    margin: 5px 0 5px 15px;
-}
-/* элементы м-медиа, фреймы */
-.popup embed,
-.popup iframe {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display:block;
-    margin: auto;
-    min-width: 320px;
-    max-width: 600px;
-    width: 100%;
-}
-.popup h2 { /* заголовок 2 */
+
+
+
+.popup h1 {
     margin: 0;
-    color: #008000;
+    color: #000000;
     padding: 5px 0px 10px;
-    text-align: left;
+    text-align: center;
     text-shadow: 1px 1px 3px #adadad;
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 2.0em;
     font-family: 'Tahoma', Arial, sans-serif;
     line-height: 1.3;
 }
 /* параграфы */
 .popup p {margin: 0; padding: 5px 0}
+.button_close{
+    font-size:100%;
+    color: #802027;
+    width: 35px;
+    height: 320px;
+    position: fixed;
+//position: absolute;
+
+    top: 20px;
+    right: 0;
+}
+.table_mail{
+    border-collapse: collapse;
+    width: 100%;
+}
+.table > tbody > tr:first-of-type > th:first-child,
+.table > tbody > tr:first-of-type > td{ border-top: none;}
+.content.main_content .table_mail{margin-top: 15px;}
+.table_mail td{
+    background-color: #fff;
+    background-color: #e2f0fd;
+
+    border-bottom: 1px solid #fff;
+    text-align: left;
+    text-indent: 2px;
+    padding: 11px 8px;
+    color: #4b4b4b;
+    font: 12px/16px 'RobotoRegular', arial, sans-serif;
+    cursor: pointer;
+}
+.table_mail td:first-child{
+    background-image: url(../img/table_mail.png);
+    background-repeat: repeat-y;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th,
+.table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    padding: 9px 8px 4px;
+}
+.table_mail td .icon-paper-clip{
+    float: left;
+    color: #969696;
+    font-size: 16px;
+    height: 20px;
+    line-height: 16px;
+}
+.table_mail td div{
+    min-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table_mail td .crazybox{display: inline-block;}
+.table_trash td .crazybox{
+    font-weight: bold;
+    max-width: 200px;
+    min-width: 180px;
+}
+

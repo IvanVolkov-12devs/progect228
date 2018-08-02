@@ -15,7 +15,7 @@ var flash    = require('connect-flash');
 
 // configuration ===============================================================
 // connect to our database
-
+app.use(express.static('./css'));
 require('./config/passport')(passport); // pass passport for configuration
 
 
@@ -39,8 +39,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
-app.use(express.static('css'));
-// routes ======================================================================
+// routes
+// ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================

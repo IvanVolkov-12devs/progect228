@@ -2,30 +2,44 @@
 <html>
 <% include _header %>
 <%include _menu%>
+<style>
+table {
+width: 100%; /* Ширина таблицы */
 
+}
+td {
+vertical -align: top; /* Выравнивание по верхнему краю ячеек */
+}
+
+</style>
 <body>
-<table class="table table-hover">
+<table class="table table-hover" >
     <thead>
     <tr>
         <th>#</th>
         <th>Email</th>
         <th>Message</th>
         <th>Time/Date</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     <tr onclick="document.location = '/message';">
 
         <th scope="row">1</th>
-        <td>Mark@gmail.com</td>
+        <td >Mark@gmail.com</td>
         <td >Ololoolo</td>
         <td>12:17/21.01.17</td>
+
+        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
     </tr>
     <tr onclick="document.location = '/message';">
         <th scope="row">2</th>
         <td>Jacob@rambler.ru</td>
         <td>Hello woorld!</td>
         <td>19.00/21.01.18</td>
+        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
     </tr>
     <tr onclick="document.location = '/message';">
         <th scope="row">3</th>
@@ -33,6 +47,7 @@
         <td >Larry the Bird</td>
         <!--<td colspan="2"></td>-->
         <td>23:17/28.07.18</td>
+        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
     </tr>
     </tbody>
 </table>

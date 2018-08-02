@@ -2,16 +2,12 @@
 <html>
 <%include _menu%>
 <%include _header%>
-
 <body>
-<!-- Ссылки на вызов модальных окон-->
-<!--<a href="#win1" class="button button-green">Открыть окно 1</a>-->
 <script type="text/javascript">
     setTimeout('window.location="#win1"',50);
 </script>
 <a href="#x" class="overlay" id="win1"></a>
 <div class="popup">
-
     <div class="col-sm-6 col-sm-offset-3">
         <form method="post" action="" > <br />
             <div class="form-group">
@@ -30,7 +26,7 @@
 
 </div>
 </div>
-
 </div>
+<%include _js_bootstap%>
 </body>
 </html>
