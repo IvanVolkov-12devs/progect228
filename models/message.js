@@ -20,10 +20,10 @@ module.exports = (sequelize, type) => {
         },
         CreatedAt:{
             type:type.DATE,
-            allowNull:false        }
-
-UpdatedAt:{
+            allowNull:false
+        },
+        UpdatedAt:{
             type:type.DATE,
-    allowNull:false
+            allowNull:false
 }
 })};

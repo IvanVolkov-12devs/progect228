@@ -8,7 +8,7 @@ var port     = process.env.PORT || 8080;
 var passport = require('passport');
 var flash    = require('connect-flash');
 app.use(express.static('./css'));
-require('./config/passport')(passport);
+require('./scripts/passport')(passport);
 app.use(bodyParser.json());
 
 // app.post('/logo', (req, res) => {

@@ -38,7 +38,6 @@ app.post('/signup', passport.authenticate('local-signup', {
 		res.render('profile.ejs', {
 		    user : req.user,ac: ac,activ:activ,ver:ver,act:act	});
 	});
-
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
