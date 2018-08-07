@@ -5,6 +5,6 @@ module.exports = {
         'user': 'kmail',
         'password': 'kmail228'
     },
-	'database': 'new',
+	'database': 'lol',
     'users_table': 'users'
 };

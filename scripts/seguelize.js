@@ -12,8 +12,8 @@ const sequelize = new Sequelize('lol', 'kmail', 'kmail228', {
 });
 const User = UserModel(sequelize, Sequelize);
 
-// sequelize.sync({ force: true })
-//     .then(() => {
-//         console.log(`Database & tables created!`)
-//     });
+sequelize.sync({ force: true })
+    .then(() => {
+        console.log(`Database & tables created!`)
+    });
 module.exports = User;

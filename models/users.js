@@ -17,10 +17,30 @@
 module.exports = (sequelize, type) => {
     return sequelize.define('user', {
         id: {
-            type: type.INTEGER,
+            type: type.INTEGER.UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            unique: true
         },
-        name: type.STRING
-    })
+        username:{
+            type:type.STRING,
+            unique: true,
+            allowNull:false
+      },
+password:{
+        type:type.CHAR,
+allowNull:false
+
+},
+        createdAt:{
+            type:type.DATE,
+            allowNull:true
+
+        },
+updatedAt:{
+  type:type.DATE,
+   allowNull:true
+
 }
+    })
+};

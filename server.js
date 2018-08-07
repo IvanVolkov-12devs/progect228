@@ -10,23 +10,23 @@ var flash    = require('connect-flash');
 app.use(express.static('./css'));
 require('./config/passport')(passport);
 app.use(bodyParser.json());
-const User = require('./scripts/seguelize');
-app.post('/logo', (req, res) => {
-    User.create(req.body)
-        .then(user => res.json(user))
-});
-app.get('/logo', (req, res) => {
-    User.findAll({
-        raw: true
-    }).then(users => {
-        //console.log(users);
-        res.render('logo',{
-            users
 
-        });
-    });
-
-});
+// app.post('/logo', (req, res) => {
+//     User.create(req.body)
+//         .then(user => res.json(user))
+// });
+// app.get('/logo', (req, res) => {
+//     User.findAll({
+//         raw: true
+//     }).then(users => {
+//         //console.log(users);
+//         res.render('logo',{
+//             users
+//
+//         });
+//     });
+//
+// });
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({

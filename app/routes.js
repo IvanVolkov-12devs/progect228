@@ -63,15 +63,20 @@ app.post('/signup', passport.authenticate('local-signup', {
     });
 
 
-
+    const User = require('../scripts/seguelize');
     app.get('/sent',function(req,res){
         var ac = "active";
         var activ,ver,act;
         activ=ver=act="";
+        User.findAll({
+            raw: true
+        }).then(users => {
         res.render('sent.ejs', {
 
-            user : req.user,ac: ac,activ:activ,ver:ver,act:act
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act,users
         });
+        });
+
     });
 
 
