@@ -11,36 +11,42 @@
         <th>Message</th>
         <th>Time/Date</th>
         <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
+    <% messages.forEach(function(message){ %>
+
     <tr onclick="document.location = '/message';">
 
-        <th scope="row">1</th>
-        <td >Mark@gmail.com</td>
-        <td >Ololoolo</td>
-        <td>12:17/21.01.17</td>
+        <th scope="row"><%= message.id %></th>
+        <td ><%= message.email %></td>
+        <td ><%= message.title%></td>
+        <td><%= message.createdAt%></td>
+<td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+        <td><button type ="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
 
-        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+    </tr>
 
-    </tr>
-    <tr onclick="document.location = '/message';">
-        <th scope="row">2</th>
-        <td>Jacob@rambler.ru</td>
-        <td>Hello woorld!</td>
-        <td>19.00/21.01.18</td>
-        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
-    </tr>
-    <tr onclick="document.location = '/message';">
-        <th scope="row">3</th>
-        <td>Harry@mail.ru</td>
-        <td >Larry the Bird</td>
-        <!--<td colspan="2"></td>-->
-        <td>23:17/28.07.18</td>
-        <td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
-    </tr>
+    <%});%>
+    <!--<tr onclick="document.location = '/message';">-->
+        <!--<th scope="row">2</th>-->
+        <!--<td>Jacob@rambler.ru</td>-->
+        <!--<td>Hello woorld!</td>-->
+        <!--<td>19.00/21.01.18</td>-->
+        <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
+    <!--</tr>-->
+    <!--<tr onclick="document.location = '/message';">-->
+        <!--<th scope="row">3</th>-->
+        <!--<td>Harry@mail.ru</td>-->
+        <!--<td >Larry the Bird</td>-->
+        <!--&lt;!&ndash;<td colspan="2"></td>&ndash;&gt;-->
+        <!--<td>23:17/28.07.18</td>-->
+        <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
+    <!--</tr>-->
     </tbody>
 </table>
 <%include _js_bootstap%>
 </body>
 </html>
+

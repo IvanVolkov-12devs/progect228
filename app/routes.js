@@ -31,31 +31,54 @@ app.post('/signup', passport.authenticate('local-signup', {
 		failureRedirect : '/signup',
 		failureFlash : true
 	}));
+    const {User,MUser} = require('../scripts/seguelize');
 	app.get('/profile', isLoggedIn, function(req, res) {
 	    var activ = "active";
         var ver,ac,act;
         ver=ac=act="";
+        MUser.findAll({
+            raw: true,
+            where:{
+                isNew:1,
+                ToUserId:req.user.id
+
+            }
+        }).then(messages => {
 		res.render('profile.ejs', {
-		    user : req.user,ac: ac,activ:activ,ver:ver,act:act	});
+		    user : req.user,ac: ac,activ:activ,ver:ver,act:act,messages	});
 	});
+
+    });
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
+
+
     app.get('/inbox',function(req,res){
         var ver = "active";
         var activ,ac,act;
         activ=ac=act="";
+        MUser.findAll({
+            raw: true,
+            where:{
+                isNew:1,
+                ToUserId:req.user.id,
+isDeleted: 0
+            }
+        }).then(messages => {
         res.render('inbox.ejs', {
-            user : req.user,ac: ac,activ:activ,ver:ver,act:act
+
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act,messages
         });
     });
-    const User = require('../scripts/seguelize');
-    app.get('/sent',function(req,res){
+    });
+
+        app.get('/sent',function(req,res){
         var ac = "active";
         var activ,ver,act;
         activ=ver=act="";
-        User.findAll({
+            User.findAll({
             raw: true
         }).then(users => {
         res.render('sent.ejs', {
@@ -63,21 +86,40 @@ app.post('/signup', passport.authenticate('local-signup', {
         });
         });
     });
+
     app.get('/trash',function(req,res){
         var act = "active";
         var activ,ver,ac;
         activ=ver=ac="";
+        MUser.findAll({
+            raw: true,
+            where:{
+                isNew:1,
+                ToUserId:req.user.id,
+                isDeleted: 1          }
+        }).then(messages => {
         res.render('trash.ejs', {
-            user : req.user,ac: ac,activ:activ,ver:ver,act:act
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act,messages
         });
     });
+
+    });
+
     app.get('/message',function(req,res){
         var ver = "active";
         var activ,ac,act;
         activ=ac=act="";
+        MUser.findAll({
+            raw: true,
+            where:{
+                isNew:1,
+                ToUserId:req.user.id,
+            }
+        }).then(messages => {
         res.render('message_form.ejs', {
-            user : req.user,ac: ac,activ:activ,ver:ver,act:act
+            user : req.user,ac: ac,activ:activ,ver:ver,act:act,messages
         });
+    });
     });
 };
 function isLoggedIn(req, res, next) {

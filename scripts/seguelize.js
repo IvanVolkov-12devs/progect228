@@ -1,4 +1,5 @@
 const UserModel = require('../models/users');
+ const MessageModel = require('../models/message');
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('lol', 'kmail', 'kmail228', {
     host: 'localhost',
@@ -11,9 +12,10 @@ const sequelize = new Sequelize('lol', 'kmail', 'kmail228', {
     }
 });
 const User = UserModel(sequelize, Sequelize);
+const MUser = MessageModel(sequelize,Sequelize);
+// sequelize.sync({ force: true })
+//     .then(() => {
+//         console.log(`Database & tables created!`)
+//     });
 
-sequelize.sync({ force: true })
-    .then(() => {
-        console.log(`Database & tables created!`)
-    });
-module.exports = User;
+module.exports ={User,MUser} ;

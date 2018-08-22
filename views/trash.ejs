@@ -3,7 +3,47 @@
 <% include _header %>
 <%include _menu%>
 <body>
-<h1><%= users%></h1>
+<table class="table table-hover" >
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Time/Date</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% messages.forEach(function(message){ %>
 
-</body>
+    <tr onclick="document.location = '/message';">
+
+        <th scope="row"><%= message.id %></th>
+        <td ><%= message.email %></td>
+        <td ><%= message.title%></td>
+        <td><%= message.createdAt%></td>
+        <td><button type ="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+
+    </tr>
+
+    <%});%>
+    <!--<tr onclick="document.location = '/message';">-->
+    <!--<th scope="row">2</th>-->
+    <!--<td>Jacob@rambler.ru</td>-->
+    <!--<td>Hello woorld!</td>-->
+    <!--<td>19.00/21.01.18</td>-->
+    <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
+    <!--</tr>-->
+    <!--<tr onclick="document.location = '/message';">-->
+    <!--<th scope="row">3</th>-->
+    <!--<td>Harry@mail.ru</td>-->
+    <!--<td >Larry the Bird</td>-->
+    <!--&lt;!&ndash;<td colspan="2"></td>&ndash;&gt;-->
+    <!--<td>23:17/28.07.18</td>-->
+    <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
+    <!--</tr>-->
+    </tbody>
+</table>
+<%include _js_bootstap%>
+<body/>
 </html>

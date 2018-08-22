@@ -8,12 +8,10 @@ module.exports = (sequelize, type) => {
         },
         FromUserId:{
             type:type.STRING,
-            unique: true,
             allowNull:false
         },
         ToUserId:{
             type:type.STRING,
-            unique: true,
             allowNull:false
         },
         email:{
@@ -25,17 +23,10 @@ module.exports = (sequelize, type) => {
             allowNull: false
         },
         message:{
-          type:type.STRING,
+          type:type.Sequelize.TEXT,
           allowNull:false
         },
-        CreatedAt:{
-            type:type.DATE,
-            allowNull:false
-        },
-        UpdatedAt:{
-            type:type.DATE,
-            allowNull:false
-        },
+
         isNew:{
             type: type.BOOLEAN,
           //  allowNull: false,
@@ -44,11 +35,21 @@ module.exports = (sequelize, type) => {
         isDeleted:{
             type:type.BOOLEAN,
           //  allowNull:false,
-            defaultValue: true
+            defaultValue: false
         },
         isFavorites:{
             type:type.BOOLEAN,
             //allowNull:false,
-            defaultValue:true
+            defaultValue:false
+        },
+        createdAt:{
+            type:type.DATE,
+            allowNull:false
+        },
+        updatedAt:{
+            type:type.DATE,
+            allowNull:false
         }
+
+
 })};

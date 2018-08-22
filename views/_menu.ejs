@@ -20,8 +20,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="<%= activ%>"><a href="/profile">Home</a></li>
-                    <li class="<%= ver%>" > <a href="/inbox">Inbox <span class="badge">3</span></a></li>
-                    <li class="<%= act%>"><a href="/trash">Trash <span class="badge">3</span></a></li>
+                    <li class="<%= ver%>" > <a href="/inbox">Inbox <span class="badge"><%= messages.length%> </span></a></li>
+                    <li class="<%= act%>"><a href="/trash">Trash <span class="badge"><%= messages.length%> </span></a></li>
                     <li class="<%= ac%>"><a href="/sent">Sent</a></li>
 
                 </ul>
