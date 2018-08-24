@@ -15,15 +15,13 @@
         <form method="post" action="" > <br />
             <div class="form-group">
                 <h1><span class="fa fa-anchor"></span> Sent Page</h1>
-                <input   type="text" class="form-control" size="32" maxlength="36" name="name" placeholder="Вaшe имя" val=""> <br />
 
-              <select  class="form-control">
+              <select name="ToUserId" class="form-control">
                   <% users.forEach(function(user){ %>
-                  <option value=“<%= user.id %>”><%= user.username%></option>
+                  <option value="<%= user.id %>"><%= user.username%></option>
                   <%});%>
               </select><br />
-            <input type="text"class="form-control" size="32" maxlength="36" name="email" placeholder="Вaш email" val=""> <br />
-                <input type="text" class="form-control" size="32" maxlength="36" name="subject" placeholder="Тeмa" val=""> <br />
+                <input type="text" class="form-control" size="32" maxlength="36" name="title" placeholder="Тeмa" val=""> <br />
                 <textarea cols="25"  class="form-control"  rows="10" name="message" placeholder="Сooбщeниe.." val=""></textarea> <br />
                 <input type="submit" class="btn btn-warning btn-lg" value="sent"/>
 
