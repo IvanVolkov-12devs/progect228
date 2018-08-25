@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 <% include _header %>
-<%include _menu%>
+<% include _menu %>
 <body>
-<table class="table table-hover" >
+
+<table class="table table-hover">
     <thead>
     <tr>
         <th>#</th>
@@ -16,37 +17,27 @@
     </thead>
     <tbody>
     <% inbox.forEach(function(message){ %>
+        <tr>
+            <th onclick="document.location = '/message';" scope="row"><%= message.id %></th>
+            <td onclick="document.location = '/message';"><%= message.email %></td>
+            <td onclick="document.location = '/message';"><%= message.title %></td>
+            <td onclick="document.location = '/message';"><%= message.createdAt %></td>
+            <td onclick="document.location = '/message';"><span class="glyphicon glyphicon-ok"
+                                                                aria-hidden="true"></span></td>
+            <td>
+                <button id="button" type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash"
+                                                                                       aria-hidden="true"></span>
+                </button>
+            </td>
 
-    <tr onclick="document.location = '/message';">
+        </tr>
 
-        <th scope="row"><%= message.id %></th>
-        <td ><%= message.email %></td>
-        <td ><%= message.title%></td>
-        <td><%= message.createdAt%></td>
-<td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-        <td><button type ="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+    <% }); %>
 
-    </tr>
-
-    <%});%>
-    <!--<tr onclick="document.location = '/message';">-->
-        <!--<th scope="row">2</th>-->
-        <!--<td>Jacob@rambler.ru</td>-->
-        <!--<td>Hello woorld!</td>-->
-        <!--<td>19.00/21.01.18</td>-->
-        <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
-    <!--</tr>-->
-    <!--<tr onclick="document.location = '/message';">-->
-        <!--<th scope="row">3</th>-->
-        <!--<td>Harry@mail.ru</td>-->
-        <!--<td >Larry the Bird</td>-->
-        <!--&lt;!&ndash;<td colspan="2"></td>&ndash;&gt;-->
-        <!--<td>23:17/28.07.18</td>-->
-        <!--<td><button type="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>-->
-    <!--</tr>-->
     </tbody>
 </table>
-<%include _js_bootstap%>
+
+<% include _js_bootstap %>
 </body>
 </html>
 

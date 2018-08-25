@@ -1,33 +1,34 @@
-
 <!doctype html>
 <html>
-<%include _menu%>
-<%include _header%>
+<% include _menu %>
+<% include _header %>
 <body>
 <script type="text/javascript">
-    setTimeout('window.location="#win1"',50);
+    setTimeout('window.location="#win1"', 50);
 
 </script>
 
 <a href="#x" class="overlay" id="win1"></a>
 <div class="popup">
     <div class="col-sm-6 col-sm-offset-3">
-        <form method="post" action="" > <br />
+        <form method="post" action=""><br/>
             <div class="form-group">
                 <h1><span class="fa fa-anchor"></span> Sent Page</h1>
 
-              <select name="ToUserId" class="form-control">
-                  <% users.forEach(function(user){ %>
-                  <option value="<%= user.id %>"><%= user.username%></option>
-                  <%});%>
-              </select><br />
-                <input type="text" class="form-control" size="32" maxlength="36" name="title" placeholder="Тeмa" val=""> <br />
-                <textarea cols="25"  class="form-control"  rows="10" name="message" placeholder="Сooбщeниe.." val=""></textarea> <br />
+                <select name="ToUserId" class="form-control">
+                    <% users.forEach(function(user){ %>
+                        <option value="<%= user.id %>"><%= user.username %></option>
+                    <% }); %>
+                </select><br/>
+                <input type="text" class="form-control" size="32" maxlength="36" name="title" placeholder="Тeмa" val="">
+                <br/>
+                <textarea cols="25" class="form-control" rows="10" name="message" placeholder="Сooбщeниe.."
+                          val=""></textarea> <br/>
                 <input type="submit" class="btn btn-warning btn-lg" value="sent"/>
 
 
                 <div class="button_close">
-                    <a class="close"title="Закрыть" href="#close"></a>
+                    <a class="close" title="Закрыть" href="#close"></a>
 
 
                 </div>
@@ -38,7 +39,7 @@
 </div>
 </div>
 </div>
-<%include _js_bootstap%>
+<% include _js_bootstap %>
 
 </body>
 </html>

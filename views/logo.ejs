@@ -5,8 +5,8 @@
 <body>
 <select name="select" class="selectpicker">
     <% users.forEach(function(user){ %>
-    <option value=“<%= user.id %>”><%= user.name%></option>
-    <%});%>
+        <option value=“<%= user.id %>”><%= user.name %></option>
+    <% }); %>
 </select>
 </body>
 </html>
