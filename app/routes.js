@@ -91,6 +91,28 @@ module.exports = function (app, passport) {
             });
         });
     });
+    app.get('/message/:id', async function(req, res) {
+
+        // Access the provided 'page' and 'limt' query parameters
+        let id = req.params.id;
+
+console.log(id);
+MUser.findAll({
+      raw: true,
+      where: {
+   id:id
+      }}).then(m => {
+    res.render('i.ejs', {
+        m
+    });
+    console.log(m);
+    console.log(m.id);
+})
+   });
+
+
+
+
     app.get('/sent', function (req, res) {
         var ac = "active";
         var activ, ver, act;
